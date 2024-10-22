@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.logo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 24px;
+    width: 500px;
+    height: 100px;
+    background: #000000;
+    border-radius: 0 0 85% 0;
+    color: aliceblue;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo2 {
+    position: absolute;
+    top: -35px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+}
+
+.logo2 img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.form-container {
+    background: transparent;
+    border: 2px transparent rgb(255, 255, 255);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.493);
+    width: 40%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px;
+    background: transparent;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s, opacity 0.3s;
+    color: white;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 16px;
+    transition: 0.3s ease-in-out, opacity 0.3s;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.input-group input:focus, .input-group input:valid {
+    border-color: #007bff;
+}
+
+.input-group input:focus + label, .input-group input:valid + label {
+    top: 5px;
+    font-size: 12px;
+    color: #007bff;
+    opacity: 0; 
+}
+
+.password-group {
+    position: relative; 
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.ingresar-button {
+    padding: 10px;
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; 
+}
+
+.ingresar-button:hover {
+    background-color: #218838; 
+}
+
+.forgot-password {
+    display: block; 
+    text-align: center; 
+    margin-top: 10px; 
+    color: #007bff; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.forgot-password:hover {
+    color: #0056b3; 
+}
+
+.image-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: animate 30s linear infinite;
+}
+
+.box:hover {
+    animation-play-state: paused;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(240px);
+}
+
+.box span::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.box span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
