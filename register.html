@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" href="icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="stylesL.css">
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="pspblue.mp4" type="video/mp4">
+    </video>
+    <div class="logo">CellFinder</div>
+    <div class="logo2">
+        <img src="logo.png" alt="Logo 2">
+        <span></span>
+    </div>
+    <h1 style="position: absolute; top: 10px; color: white;"></h1>
+    <div class="container">
+        <div class="form-container">
+            <form action="#" class="form">
+                <div class="input-group">
+                    <input type="email" id="email1" required>
+                    <label for="email1">ingrese su correo electronico</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email2" required>
+                    <label for="email2">repita su correo electronico</label>
+                </div>
+                <div class="input-group password-group">
+                    <input type="password" id="password1" required>
+                    <label for="password1">ingrese su contraseña</label>
+                    <button type="button" class="toggle-password" data-target="password1">Mostrar</button>
+                </div>
+                <div class="input-group password-group">
+                    <input type="password" id="password2" required>
+                    <label for="password2">ingrese su contraseña</label>
+                    <button type="button" class="toggle-password" data-target="password2">Mostrar</button>
+                </div>
+                <button type="submit">registrar</button>
+                <p><a href="#" class="forgot-password">tienes cuenta?</a></p>
+            </form>
+        </div>
+        <div class="image-container">
+            <div class="box">
+                <span style="--i:0;"><img src="reimu.gif" alt="Image 1"></span>
+                <span style="--i:1;"><img src="marisad.gif" alt="Image 2"></span>
+                <span style="--i:2;"><img src="yuuka.gif" alt="Image 3"></span>
+                <span style="--i:3;"><img src="yuyuko.gif" alt="Image 4"></span>
+                <span style="--i:4;"><img src="patchouli.gif" alt="Image 5"></span>
+                <span style="--i:5;"><img src="cirno.gif" alt="Image 6"></span>
+                <span style="--i:6;"><img src="pajaro_de_tres_penes.gif" alt="Image 7"></span>
+                <span style="--i:7;"><img src="clownpiece.gif" alt="Image 8"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.toggle-password').forEach(button => {
+                button.addEventListener('click', function () {
+                    const passwordInput = document.querySelector(`#${this.getAttribute('data-target')}`);
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    this.textContent = type === 'password' ? 'Mostrar' : 'Ocultar';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
